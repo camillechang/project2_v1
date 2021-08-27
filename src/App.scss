@@ -1,0 +1,182 @@
+
+// @import "../node_modules/bootstrap/scss/bootstrap.scss";
+html,body{
+    font-family: Arial, Helvetica, sans-serif;
+    // background-color:#52692d;
+    margin: 0;
+    padding: 0;
+}
+// *{font-size: 62.5%;}
+.container{
+    min-width: 80%;
+    height: 100%;
+    // min-width: 600px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 25px;
+    -webkit-box-shadow: -7px 8px 15px -2px #9942FF; 
+box-shadow: -7px 8px 15px -2px #9942FF;
+margin: 15% 0 0 20px;
+// padding-top:0;
+}
+.weather-detail{
+    background: url('./bg.png') no-repeat center;
+    background-size: cover; 
+    height:40%;
+    width:100%;
+    // position: relative;
+    // margin:0;
+    // padding: 0;
+    box-sizing: border-box;
+}
+.today-weather{
+    //  position: relative;
+    // margin:0;
+    // padding: 0;
+
+    height:100%;
+}
+.today-weather> h2, .today-weather>h4{
+    color:white;
+    //    position:absolute;
+    // left:15%;
+    // top:15%;
+    font-size:20px;
+    // margin:0;
+    // padding: 0;
+    // z-index: 2;
+}
+.humidity-wind{
+    display:flex;
+}
+.weatherLine{
+    background:white;
+    width:1px;
+    height:20px;
+    margin: 0 10px;
+//     display: block;
+}
+
+.city-location{
+    position:absolute;
+    top:10%;
+    right:10%;
+    width:50px;
+    height:50px;
+   color: white;
+   
+}
+
+.link-top{
+    width:100px;
+    height:2px;
+border-top: 2px solid white;
+}
+
+.botom-part{
+display:flex;
+margin-top: 20px;
+width:80%;
+height:60%;
+}
+.left-part{
+    width:30%;
+    height:100%;
+    margin-left: 15px;
+    margin-right: 25px;
+    flex-grow: 1;
+    position: relative;
+}
+.right-part{
+    flex-grow: 1;
+    display:flex;
+    align-items:center;
+    width:65%;
+    height:100%;
+    border-left: 2px solid purple;
+}
+.dayWeather{
+    margin:10px;
+    flex-grow: 1;
+}
+.dayWeather h3{
+    font-size:20px;
+    text-align:center;
+}
+.dayWeather h4{
+    text-align:center;
+}
+.dayweather-icons{
+    width:50px;
+    height:50px;
+color:blue;
+}
+.WiRaindrops{
+    width:100px;
+    height:100px; 
+}
+.dayweather-icons-sunny{
+color:gold;
+}
+.twitter-feed{
+ display: flex;
+ align-items:baseline;
+}
+.twitter-feed >h3{
+    margin-right: 10px;
+    font-size:20px;
+}
+.twitter-feed >span{
+color:grey;
+}
+.twitter-logo {
+    color: rgb(0, 153, 255);
+    margin-right: 10px;
+}
+.twitter-feed-words{
+    display: flex;
+    align-items: center;
+}
+.twitter-feed-words >p{
+  word-wrap: break-word;
+  font-size:14px;
+  color: #c0c0d4;
+  margin-bottom: 30px;
+  flex-grow: 1;
+}
+.grey-circle{
+    color: rgba(223,241,255,255);
+    width:20%;
+    height:20%;
+    margin-right: 15px;
+    flex-grow: 1;
+}
+
+.next-div{
+    display: flex;
+    align-items: flex-end;
+    justify-content:flex-end;
+//     position: absolute;
+//     bottom:10px;
+// left: 10px;
+}
+.next-text{
+    flex-grow: 1;  
+    text-align: right;
+}
+.twitter-next{
+    color: orange;
+    flex-grow: 1;
+    width:30px;
+    height:30px;
+    margin: 0;
+    padding: 0;
+}
+
+// design for small screen
+@media screen and (max-device-width: 800px){
+.container{
+    min-width: 400px;
+    height: 100%;
+}
+}
