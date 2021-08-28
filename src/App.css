@@ -1,21 +1,22 @@
-html, body {
-  font-family: Arial, Helvetica, sans-serif;
+html,
+body {
+  font-family: "Times New Roman", Georgia, serif;
   margin: 0;
   padding: 0;
 }
 
 .container {
-  min-width: 80%;
-  height: 100%;
+  width: 80%;
+  height: 60%;
   position: relative;
   overflow: hidden;
-  border-radius: 25px;
-  -webkit-box-shadow: -7px 8px 15px -2px #9942FF;
-  box-shadow: -7px 8px 15px -2px #9942FF;
+  border-radius: 20px;
+  -webkit-box-shadow: -7px 8px 15px -2px #9942ff;
+  box-shadow: -7px 8px 15px -2px #9942ff;
   margin: 15% 0 0 20px;
 }
 
-.weather-detail {
+.top-part {
   background: url("./bg.png") no-repeat center;
   background-size: cover;
   height: 40%;
@@ -23,33 +24,67 @@ html, body {
   box-sizing: border-box;
 }
 
-.today-weather {
+.today-detail {
   height: 100%;
+  width: 40%;
+  box-sizing: border-box;
+  position: relative;
 }
 
-.today-weather > h2, .today-weather > h4 {
+.today-weather {
+  text-align: center;
+  height: 70%;
+  width: 100%;
+  padding-top: 10%;
+  padding-left: 5%;
+}
+
+.today-temp {
+  margin: 0;
+  padding: 0;
   color: white;
-  font-size: 20px;
+  font-size: 4rem;
+}
+
+.today-temp1 {
+  color: #b1a9d0;
 }
 
 .humidity-wind {
   display: flex;
+  align-content: center;
+  height: 30%;
+  width: 100%;
+  margin-left: 5%;
+  text-align: center;
+  color: #b1a9d0;
+  font-size: 1rem;
+  padding-bottom: 30px;
 }
 
-.weatherLine {
-  background: white;
-  width: 1px;
-  height: 20px;
-  margin: 0 10px;
+.humidity {
+  flex-grow: 1;
+}
+
+.wind {
+  flex-grow: 1;
 }
 
 .city-location {
   position: absolute;
-  top: 10%;
+  top: 5%;
   right: 10%;
-  width: 50px;
-  height: 50px;
   color: white;
+  letter-spacing: 2px;
+}
+
+.city-location::after {
+  content: "";
+  width: 50%;
+  height: 2px;
+  display: block;
+  margin: 0 auto;
+  background: white;
 }
 
 .link-top {
@@ -61,15 +96,14 @@ html, body {
 .botom-part {
   display: flex;
   margin-top: 20px;
-  width: 80%;
+  width: 100%;
   height: 60%;
 }
 
 .left-part {
-  width: 30%;
   height: 100%;
   margin-left: 15px;
-  margin-right: 25px;
+  margin-right: 5%;
   flex-grow: 1;
   position: relative;
 }
@@ -81,11 +115,13 @@ html, body {
   width: 65%;
   height: 100%;
   border-left: 2px solid purple;
+  padding: auto 3% 15%;
 }
 
 .dayWeather {
   margin: 10px;
   flex-grow: 1;
+  text-align: center;
 }
 
 .dayWeather h3 {
@@ -154,22 +190,26 @@ html, body {
 
 .next-div {
   display: flex;
-  align-items: flex-end;
+  height: 40px;
+  width: 100%;
+  align-content: center;
   justify-content: flex-end;
 }
 
 .next-text {
   flex-grow: 1;
   text-align: right;
+  display: inline-block;
+  flex-grow: 1;
+  margin: 0 0 auto auto;
+  letter-spacing: 5px;
 }
 
 .twitter-next {
   color: orange;
   flex-grow: 1;
-  width: 30px;
-  height: 30px;
-  margin: 0;
-  padding: 0;
+  width: 25px;
+  height: 25px;
 }
 
 @media screen and (max-device-width: 800px) {

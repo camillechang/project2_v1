@@ -10,31 +10,27 @@ function App() {
   return (
     <div className="container">
       {/* weather detail */}
-      <div className="weather-detail">
-        <div className="today-weather">
-        <h2>12°</h2>
-        <h4>CLOUDY</h4>
-        </div>
-  
-        
-        <div className="city-location">
-        <h3 className="city-name">FRANCE</h3>
-        <div className="link-top" />
-        </div>
-       
-
-        <div className="humidity-wind">
-          <div className="humidity">
-            <h4>Humidity</h4>
-            <span>14%</span>
+      <div className="top-part">
+        <h3 className="city-location">FRANCE</h3>
+        <div className="today-detail">
+          <div className="today-weather">
+            <h2 className="today-temp">12°</h2>
+            <div className="today-temp1">CLOUDY</div>
           </div>
-          <div className="weatherLine"></div>
-          <div className="wind">
-            <h4>Wind</h4>
-            <label>12 K/M</label>
+          <div className="humidity-wind">
+            <div className="humidity">
+              <h4>HUMIDITY</h4>
+              <span>64%</span>
+            </div>
+            <div className="wind">
+              <h4>WIND</h4>
+              <span>12 K/M</span>
+            </div>
           </div>
         </div>
       </div>
+
+
 
       {/* left part */}
       <div className="botom-part">
@@ -90,7 +86,7 @@ function App() {
           <div className="dayWeather">
             <h3>FRI</h3>
             <WiDaySunny className="dayweather-icons dayweather-icons-sunny" />
-             <h4>18°</h4>
+            <h4>18°</h4>
             <h6>SUNNY</h6>
           </div>
         </div>
