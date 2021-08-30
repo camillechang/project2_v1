@@ -44,6 +44,7 @@ body {
   padding: 0;
   color: white;
   font-size: 4rem;
+  text-align: center;
 }
 
 .today-temp1 {
@@ -55,7 +56,7 @@ body {
   align-content: center;
   height: 30%;
   width: 100%;
-  margin-left: 5%;
+  min-height: 50px;
   text-align: center;
   color: #b1a9d0;
   font-size: 1rem;
@@ -64,10 +65,26 @@ body {
 
 .humidity {
   flex-grow: 1;
+  height: 100%;
+}
+
+.hw-seperated-line {
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  background: #b1a9d0;
+  margin: 10% 0;
+}
+
+.hw-seperated-line {
+  width: 2px;
+  height: 50px;
+  background: #b1a9d0;
 }
 
 .wind {
   flex-grow: 1;
+  height: 100%;
 }
 
 .city-location {
@@ -136,16 +153,12 @@ body {
 .dayweather-icons {
   width: 50px;
   height: 50px;
-  color: blue;
+  color: gold;
 }
 
 .WiRaindrops {
   width: 100px;
   height: 100px;
-}
-
-.dayweather-icons-sunny {
-  color: gold;
 }
 
 .twitter-feed {
@@ -158,8 +171,8 @@ body {
   font-size: 20px;
 }
 
-.twitter-feed > span {
-  color: grey;
+.cityhashtag {
+  color: #3d278d;
 }
 
 .twitter-logo {
@@ -167,33 +180,40 @@ body {
   margin-right: 10px;
 }
 
+.twitter-news {
+  width: 100%;
+  height: 40%;
+}
+
 .twitter-feed-words {
+  width: 100%;
+  height: 50%;
   display: flex;
   align-items: center;
 }
 
-.twitter-feed-words > p {
-  word-wrap: break-word;
-  font-size: 14px;
-  color: #c0c0d4;
-  margin-bottom: 30px;
-  flex-grow: 1;
-}
-
 .grey-circle {
   color: #dff1ff;
-  width: 20%;
-  height: 20%;
+  width: 15%;
+  height: 15%;
   margin-right: 15px;
-  flex-grow: 1;
+  display: inline-block;
+}
+
+.twitter-feed-words > p {
+  width: 85%;
+  word-wrap: break-word;
+  word-break: break-word;
+  font-size: 14px;
+  color: #c0c0d4;
+  display: inline-block;
 }
 
 .next-div {
   display: flex;
   height: 40px;
   width: 100%;
-  align-content: center;
-  justify-content: flex-end;
+  padding-top: 10px;
 }
 
 .next-text {
@@ -201,15 +221,15 @@ body {
   text-align: right;
   display: inline-block;
   flex-grow: 1;
-  margin: 0 0 auto auto;
+  margin: auto;
   letter-spacing: 5px;
 }
 
-.twitter-next {
+.next-arrow {
   color: orange;
   flex-grow: 1;
-  width: 25px;
-  height: 25px;
+  width: 20%;
+  height: 100%;
 }
 
 @media screen and (max-device-width: 800px) {
