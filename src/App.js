@@ -2,33 +2,15 @@ import "./App.css";
 
 import { FaTwitter, FaCircle } from "react-icons/fa";
 import { BsFillCaretRightFill } from "react-icons/bs";
+
+import CurrentWeather from "./components/CurrentWeather";
 import DailyWeather from "./components/DailyWeather";
 
 function App() {
   return (
     <div className="container">
       {/* weather detail */}
-      <div className="top-part  ">
-        <h3 className="city-location">FRANCE</h3>
-        <div className="today-detail">
-          <div className="today-weather">
-            <h2 className="today-temp">12°</h2>
-            <div className="today-temp1">CLOUDY</div>
-          </div>
-          <div className="humidity-wind">
-            <div className="humidity">
-              <h4>HUMIDITY</h4>
-              <span>64%</span>
-            </div>
-            <span className="hw-seperated-line"></span>
-            <div className="wind">
-              <h4>WIND</h4>
-              <span>12 K/M</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      <CurrentWeather />
       {/* left twitter feed----- */}
       <div className="botom-part">
         <div className="left-part">
