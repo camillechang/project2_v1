@@ -1,21 +1,14 @@
-// import logo from "./logo.svg";
 import "./App.css";
-// import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { FaTwitter, FaCircle } from "react-icons/fa";
 import { BsFillCaretRightFill } from "react-icons/bs";
-import {
-  WiRain,
-  WiThunderstorm,
-  WiDaySunny,
-  WiDayCloudy,
-} from "react-icons/wi";
+import DailyWeather from "./components/DailyWeather";
 
 function App() {
   return (
     <div className="container">
       {/* weather detail */}
-      <div className="top-part">
+      <div className="top-part  ">
         <h3 className="city-location">FRANCE</h3>
         <div className="today-detail">
           <div className="today-weather">
@@ -61,39 +54,9 @@ function App() {
             <BsFillCaretRightFill className="next-arrow" />
           </div>
         </div>
+
         {/* weekly weather */}
-        <div className="right-part">
-          <div className="dayWeather">
-            <h3>MON</h3>
-            <WiRain className="dayweather-icons" />
-            <h4>9°</h4>
-            <h6>RAINING</h6>
-          </div>
-          <div className="dayWeather ">
-            <h3>TUE</h3>
-            <WiDaySunny className="dayweather-icons" />
-            <h4>15°</h4>
-            <h6>SUNNY</h6>
-          </div>
-          <div className="dayWeather  ">
-            <h3>WED</h3>
-            <WiDayCloudy className="dayweather-icons" />
-            <h4>11°</h4>
-            <h6>CLOUDY</h6>
-          </div>
-          <div className="dayWeather  ">
-            <h3>THU</h3>
-            <WiThunderstorm className="dayweather-icons" />
-            <h4>7°</h4>
-            <h6>STORM</h6>
-          </div>
-          <div className="dayWeather">
-            <h3>FRI</h3>
-            <WiDaySunny className="dayweather-icons" />
-            <h4>18°</h4>
-            <h6>SUNNY</h6>
-          </div>
-        </div>
+        <DailyWeather />
       </div>
     </div>
   );
