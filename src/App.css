@@ -1,6 +1,6 @@
 html,
 body {
-  font-family: "Times New Roman", Georgia, serif;
+  font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
   margin: 0;
   padding: 0;
 }
@@ -17,7 +17,7 @@ body {
 }
 
 .top-part {
-  background: url("./bg.png") no-repeat center;
+  background: url("./components/assets/imgs/bg.png") no-repeat center;
   background-size: cover;
   height: 40%;
   width: 100%;
