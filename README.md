@@ -10,5 +10,5 @@
 - SCSS 文件 优化
 - 整体的重构 Readable, reuseable and maintable
 ### current project website
-
+https://camillechang.github.io/project2_v1/
 
