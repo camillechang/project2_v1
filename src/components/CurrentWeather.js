@@ -59,7 +59,7 @@ class CurrentWeather extends React.Component {
           <div className="today-weather">
             <h2 className="today-temp">{this.state.curentWeatherData.temp}°</h2>
             <div className="today-temp1">
-              {this.state.curentWeatherData.temp}
+              {this.state.curentWeatherData.weather}
             </div>
           </div>
           <div className="humidity-wind">
