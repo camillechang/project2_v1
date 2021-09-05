@@ -1,6 +1,7 @@
 import React from "react";
+import Axios from "axios";
 
-const cityName = "France";
+const cityName = "Canberra";
 const apiKey = "0cf172e803d3e760c17228daccbd18a6";
 const units = "metric"; //show temperature in C
 const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=${units}`;
@@ -11,10 +12,12 @@ class CurrentWeather extends React.Component {
     this.state = {
       curentWeatherData: [],
     };
-    this.getData = this.getData.bind(this);
+    // this.getData = this.getData.bind(this);
+    this.getDataviaAxios = this.getDataviaAxios.bind(this);
   }
   componentDidMount() {
-    this.getData();
+    // this.getData();
+    this.getDataviaAxios();
   }
 
   getData() {
@@ -29,11 +32,13 @@ class CurrentWeather extends React.Component {
         //current weather
         const weather = data.weather[0].main;
         console.log(weather);
+
+        const { humidity, temp } = data.main;
         //currentTemp
-        const temp = this.getTemp(data.main.temp);
+        // const temp = this.getTemp(data.main.temp);
         console.log(temp); //get 00.0
         //humidity
-        const humidity = data.main.humidity;
+        // const humidity = data.main.humidity;
         console.log(humidity);
         //wind speed
         const speed = data.wind.speed;
@@ -43,6 +48,34 @@ class CurrentWeather extends React.Component {
         this.setState({ curentWeatherData: sortedItems });
       });
   }
+
+  getDataviaAxios = () => {
+    console.log("getData2-------");
+    Axios.get(url)
+      .then((response) => {
+        // handle success
+        let data = response.data;
+        console.log(data);
+
+        const weather = data.weather[0].main;
+        console.log(weather);
+
+        const { humidity, temp } = data.main;
+        //currentTemp
+        // const temp = this.getTemp(data.main.temp);
+        console.log(temp); //get 00.0
+        //humidity
+        // const humidity = data.main.humidity;
+        console.log(humidity);
+        //wind speed
+        const speed = data.wind.speed;
+        console.log(speed);
+
+        let sortedItems = { temp, weather, humidity, speed };
+        this.setState({ curentWeatherData: sortedItems });
+      });
+  };
+
   getTemp = (temp1) => {
     // temp1="24.53";
     let temp = parseFloat(temp1);
@@ -51,10 +84,11 @@ class CurrentWeather extends React.Component {
     console.log("temp : " + currentTemp);
     return currentTemp;
   };
+
   render() {
     return (
       <div className="top-part  ">
-        <h3 className="city-location">FRANCE</h3>
+        <h3 className="city-location">CANBERRA</h3>
         <div className="today-detail">
           <div className="today-weather">
             <h2 className="today-temp">{this.state.curentWeatherData.temp}°</h2>

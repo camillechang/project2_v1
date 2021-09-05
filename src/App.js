@@ -17,7 +17,7 @@ function App() {
           <div className="twitter-feed">
             <FaTwitter className="twitter-logo" />
             <h3>Twitter Feed </h3>
-            <span className="cityhashtag">#France</span>
+            <span className="cityhashtag">#Canberra</span>
           </div>
 
           <div className="twitter-news">
@@ -27,7 +27,7 @@ function App() {
             </div>
             <div className="twitter-feed-words">
               <FaCircle className="grey-circle" />{" "}
-              <p>Amazing weather in Paris!</p>
+              <p>Amazing weather in Canberra!</p>
             </div>
           </div>
 
