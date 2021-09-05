@@ -1,4 +1,6 @@
 import React from "react";
+import Axios from "axios";
+
 import "./DailyWeather.css";
 
 import {
@@ -8,7 +10,7 @@ import {
   WiDayCloudy,
 } from "react-icons/wi";
 
-const cityName = "France";
+const cityName = "Canberra";
 const apiKey = "0cf172e803d3e760c17228daccbd18a6";
 const units = "metric"; //show temperature in C
 const url = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}&units=${units}`;
@@ -19,10 +21,12 @@ class DailyWeather extends React.Component {
     this.state = {
       dataItemList: [],
     };
-    this.getData = this.getData.bind(this);
+    // this.getData = this.getData.bind(this);
+    this.getDataviaAxios = this.getDataviaAxios.bind(this);
   }
   componentDidMount() {
-    this.getData();
+    // this.getData();
+    this.getDataviaAxios();
   }
 
   getData() {
@@ -40,22 +44,42 @@ class DailyWeather extends React.Component {
       });
   }
 
+
+  getDataviaAxios = () => {
+    console.log("getDataviaAxios-------:");
+    Axios.get(url)
+      .then((response) => {
+        let data = response.data;
+        console.log(data);
+        console.log("length:", data.list.length);
+        let sortedItems = this.getWeatherData(data.list);
+
+        this.setState({ dataItemList: sortedItems });
+
+      })
+  }
+
   //format data to output style
   getWeatherData = (list) => {
     let items = [];
     console.log("getWeatherData------:", list);
     list.forEach((item) => {
-      if (item.dt_txt.includes("00:00:00")) {
-        console.log(item.dt_txt); //date 2021-09-04 00:00:00
+      const { dt_txt } = item;
+      if (dt_txt.includes("00:00:00")) {
+        console.log(dt_txt); //date 2021-09-04 00:00:00
         console.log("----2--");
-        console.log(item.weather[0].main); //weather Rain
 
-        console.log(item.main.temp); //temp 24.53
+
+        const { main } = item.weather[0];
+        console.log(main); //weather Rain
+
+        const { temp } = item.main;
+        console.log(temp); //temp 24.53
 
         const dataItem = [
-          { date: this.getDayofWeek(item.dt_txt) },
-          { weather: item.weather[0].main },
-          { temperature: this.getTemp(item.main.temp) },
+          { date: this.getDayofWeek(dt_txt) },
+          { weather: main },
+          { temperature: this.getTemp(temp) },
         ];
         items.push(dataItem);
       }

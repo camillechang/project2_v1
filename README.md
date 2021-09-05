@@ -4,6 +4,8 @@
 
 ## This project is an React weather web project which use OpenWeather API to display current weather of a city and five days forcast.
 
+### This project inclues Axios, scss and react.
+
 ### Finished features:
 
 - Five days weather forcast display
