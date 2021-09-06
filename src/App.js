@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import { FaTwitter, FaCircle } from "react-icons/fa";
 import { BsSearch, BsFillCaretRightFill } from "react-icons/bs";
 
-import CurrentWeather from "./components/CurrentWeather";
-import DailyWeather from "./components/DailyWeather";
+import CurrentWeather from "./components/weather/CurrentWeather";
+import DailyWeather from "./components/weather/DailyWeather";
 
 // import SideBarMenu from "./components/SideBarMenu";
 
@@ -64,11 +64,6 @@ function App() {
 
           {/* weekly weather */}
           <DailyWeather />
-
-          <div className="next-div">
-            <h4 className="next-text">NEXT</h4>
-            <BsFillCaretRightFill className="next-arrow" />
-          </div>
 
         </div>
       </div></div>
