@@ -61,8 +61,15 @@ function App() {
             </div>
           </div>
 
+
           {/* weekly weather */}
           <DailyWeather />
+
+          <div className="next-div">
+            <h4 className="next-text">NEXT</h4>
+            <BsFillCaretRightFill className="next-arrow" />
+          </div>
+
         </div>
       </div></div>
   );
