@@ -1,6 +1,6 @@
 # Project2 Weather API with React
 
-![](./src/assets/imgs/website-ui.png)
+![](./src/assets/imgs/website-ui.PNG)
 
 ## This project is an React weather web project which use OpenWeather API to display current weather of a city and five days forcast.
 
