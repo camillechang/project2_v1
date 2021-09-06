@@ -31,10 +31,10 @@ function App() {
             </div>
           </div>
 
-          <div className="next-div">
+          {/* <div className="next-div">
             <h4 className="next-text">NEXT</h4>
             <BsFillCaretRightFill className="next-arrow" />
-          </div>
+          </div> */}
         </div>
 
         {/* weekly weather */}
