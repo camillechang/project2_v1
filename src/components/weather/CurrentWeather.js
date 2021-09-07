@@ -23,48 +23,6 @@ class CurrentWeather extends React.Component {
     this.getDataviaAxios();
   }
 
-
-  // shouldComponentUpdate(nextProps) {
-  //   console.log("1111:", nextProps.key);
-  //   console.log("2222:", this.state.key);
-  //   if (nextProps.cityName !== this.state.cityName) {
-
-  //     this.setState = {
-  //       cityName: nextProps.cityName
-  //     }
-  //     return true;
-  //   }
-  //   return false;
-  // }
-  // getData() {
-  //   fetch(url)
-  //     .then((response) => {
-  //       return response.json(); //this needs return, otherwise undefined
-  //     })
-  //     .then((data) => {
-  //       console.log(typeof data);
-  //       console.log("CurrentWeather------");
-  //       console.log(data);
-  //       //current weather
-  //       const weather = data.weather[0].main;
-  //       console.log(weather);
-
-  //       const { humidity, temp } = data.main;
-  //       //currentTemp
-  //       // const temp = this.getTemp(data.main.temp);
-  //       console.log(temp); //get 00.0
-  //       //humidity
-  //       // const humidity = data.main.humidity;
-  //       console.log(humidity);
-  //       //wind speed
-  //       const speed = data.wind.speed;
-  //       console.log(speed);
-
-  //       let sortedItems = { temp, weather, humidity, speed };
-  //       this.setState({ curentWeatherData: sortedItems });
-  //     });
-  // }
-
   getDataviaAxios = () => {
     console.log("getData2-------");
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${this.state.cityName}&appid=${apiKey}&units=${units}`;
