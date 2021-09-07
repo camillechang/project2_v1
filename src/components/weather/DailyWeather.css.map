@@ -1,1 +1,9 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"DailyWeather.css"}
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "DailyWeather.scss"
+    ],
+    "names": [],
+    "file": "DailyWeather.css"
+}
