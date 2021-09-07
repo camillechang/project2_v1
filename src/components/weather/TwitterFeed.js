@@ -13,30 +13,30 @@ export default class TwitterFeed extends Component {
 
     render() {
         return (
-            <div className="botom-part" >
-                <div className="left-part">
-                    <div className="twitter-feed">
-                        <FaTwitter className="twitter-logo" />
-                        <h3>Twitter Feed </h3>
-                        <span className="cityhashtag">#{this.state.cityName}</span>
-                    </div>
+            <div className="left-part">
+                <div className="twitter-feed">
+                    <FaTwitter className="twitter-logo" />
+                    <h3>Twitter Feed </h3>
+                    <span className="cityhashtag">#{this.state.cityName}</span>
+                </div>
 
-                    <div className="twitter-news">
-                        <div className="twitter-feed-words">
-                            <FaCircle className="grey-circle" />
-                            <p>Don't forget your sunscreen tomorrow! </p>
-                        </div>
-                        <div className="twitter-feed-words">
-                            <FaCircle className="grey-circle" />{" "}
-                            <p>Amazing weather in {this.state.cityName}!</p>
-                        </div>
+                <div className="twitter-news">
+                    <div className="twitter-feed-words">
+                        <FaCircle className="grey-circle" />
+                        <p>Don't forget your sunscreen tomorrow! </p>
                     </div>
-                    <div className="next-div">
-                        <h4 className="next-text">NEXT</h4>
-                        <BsFillCaretRightFill className="next-arrow" />
+                    <div className="twitter-feed-words">
+                        <FaCircle className="grey-circle" />{" "}
+                        <p>Amazing weather in {this.state.cityName}!</p>
                     </div>
+                </div>
+
+                <div className="next-div">
+                    <h4 className="next-text">NEXT</h4>
+                    <BsFillCaretRightFill className="next-arrow" />
                 </div>
             </div>
         )
+
     }
 }
