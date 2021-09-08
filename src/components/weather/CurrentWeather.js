@@ -1,5 +1,6 @@
 import React from "react";
 import Axios from "axios";
+import "./CurrentWeather.css";
 
 const defaultCity = process.env.REACT_APP_CITY;
 const apiKey = process.env.REACT_APP_APIKEY;
@@ -95,7 +96,6 @@ class CurrentWeather extends React.Component {
               <h4>HUMIDITY</h4>
               <span>{this.state.curentWeatherData.humidity}%</span>
             </div>
-            <span className="hw-seperated-line"></span>
             <div className="current_weather--wind">
               <h4>WIND</h4>
               <span>{this.state.curentWeatherData.speed}K/M</span>

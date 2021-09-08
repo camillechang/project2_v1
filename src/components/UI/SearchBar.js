@@ -20,8 +20,8 @@ const SearchBar = (props) => {
     };
 
     return (
-        <form className="search-form" onSubmit={submitHandler} action="#">
-            <BsSearch />
+        <form className="search_form" onSubmit={submitHandler} action="#">
+            <BsSearch className="search_form--icon" />
             <input
                 type="text"
                 value={enteredTitle}

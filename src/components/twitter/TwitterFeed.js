@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { FaTwitter, FaCircle } from "react-icons/fa";
 import { BsFillCaretRightFill } from "react-icons/bs";
+
+
+import "./TwitterFeed.css";
 export default class TwitterFeed extends Component {
     constructor(props) {
         super(props);
@@ -9,19 +12,19 @@ export default class TwitterFeed extends Component {
 
     render() {
         return (
-            <div className="left-part">
-                <div className="twitter-feed">
-                    <FaTwitter className="twitter-logo" />
+            <div className="twitter_feed--main">
+                <div className="twitter_feed--header">
+                    <FaTwitter className="twitter_feed--logo" />
                     <h3>Twitter Feed </h3>
-                    <span className="cityhashtag">{this.props.cityName}</span>
+                    <span className="twitter_feed--city"> #{this.props.cityName}</span>
                 </div>
 
-                <div className="twitter-news">
-                    <div className="twitter-feed-words">
+                <div className="twitter_feed--news">
+                    <div className="twitter_feed--item">
                         <FaCircle className="grey-circle" />
                         <p>Don't forget your sunscreen tomorrow! </p>
                     </div>
-                    <div className="twitter-feed-words">
+                    <div className="twitter_feed--item">
                         <FaCircle className="grey-circle" />
                         <p>Amazing weather in {this.props.cityName}!</p>
                     </div>

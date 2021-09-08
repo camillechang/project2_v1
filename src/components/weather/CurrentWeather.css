@@ -1,0 +1,96 @@
+.current_weather--main {
+  background: url("../../assets/imgs/bg2.png") no-repeat center;
+  background-size: cover;
+  height: 40%;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.current_weather--city {
+  position: absolute;
+  top: 5%;
+  right: 10%;
+  color: white;
+  letter-spacing: 2px;
+  font-size: 3rem;
+}
+
+.current_weather--city:after {
+  content: "";
+  width: 60%;
+  height: 2px;
+  display: block;
+  margin: 0 auto;
+  background: white;
+}
+
+.current_weather--body {
+  height: 100%;
+  width: 40%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+}
+
+.current_weather--temp {
+  text-align: center;
+  height: 70%;
+  width: 100%;
+  padding-top: 10%;
+  padding-left: 5%;
+}
+
+.current_weather--h2 {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-size: 4rem;
+  text-align: center;
+}
+
+.current_weather--description {
+  color: #b1a9d0;
+  font-size: 2rem;
+}
+
+.current_weather--hw {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  height: 30%;
+  width: 100%;
+  text-align: center;
+  color: #b1a9d0;
+  font-size: 1.5rem;
+  padding-bottom: 30px;
+}
+
+.current_weather--humidity {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  height: 10rem;
+  width: 100%;
+}
+
+.current_weather--wind {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  height: 100%;
+  position: relative;
+}
+
+.current_weather--wind:before {
+  content: "";
+  width: 5px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: red;
+}
+/*# sourceMappingURL=CurrentWeather.css.map */
