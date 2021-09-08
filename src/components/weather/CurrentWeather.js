@@ -1,9 +1,11 @@
 import React from "react";
 import Axios from "axios";
 
-let cityName = "Canberra";
-const apiKey = "0cf172e803d3e760c17228daccbd18a6";
-const units = "metric"; //show temperature in C
+const defaultCity = process.env.REACT_APP_CITY;
+const apiKey = process.env.REACT_APP_APIKEY;
+const units = process.env.REACT_APP_UNIT; //show temperature in C
+
+
 class CurrentWeather extends React.Component {
   constructor(props) {
     super(props);
@@ -11,42 +13,49 @@ class CurrentWeather extends React.Component {
       curentWeatherData: [],
       cityName: props.cityName,
     };
-    console.log("cconstructor---");
+    // console.log("cconstructor---defaultCity:", defaultCity);
 
-    console.log("currentweather cityname:", props.cityName);
-    // this.getData = this.getData.bind(this);
+    // console.log("currentweather cityname:", this.state.cityName);
+    // console.log("currentweather props:", props.cityName);
     this.getDataviaAxios = this.getDataviaAxios.bind(this);
   }
 
   componentDidMount() {
-    // this.getData();
     this.getDataviaAxios();
   }
 
+  componentDidUpdate(prevProps) {
+
+    if (this.props.cityName !== prevProps.cityName) {
+      // this.fetchData(this.props.userID);
+      this.getDataviaAxios();
+    }
+  }
   getDataviaAxios = () => {
-    console.log("getData2-------");
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${this.state.cityName}&appid=${apiKey}&units=${units}`;
+    let cityName = defaultCity;
+    if (!!this.props.cityName) {//exists
+      cityName = this.props.cityName;
+    }
+
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=${units}`
+    // console.log("getDataviaAxios--url----:", url);
+
 
     Axios.get(url).then((response) => {
       // handle success
       let data = response.data;
       console.log(data);
 
-      const weather = data.weather[0].main;
-      console.log(weather);
+      let sortedItems = {
+        temperature: data.main.temp, //get 00.0
+        weather: data.weather[0].main,
+        humidity: data.main.humidity,
+        speed: data.wind.speed
+      };
+      // console.log(sortedItems)
 
-      const { humidity, temp } = data.main;
-      //currentTemp
-      // const temp = this.getTemp(data.main.temp);
-      console.log(temp); //get 00.0
-      //humidity
-      // const humidity = data.main.humidity;
-      console.log(humidity);
-      //wind speed
-      const speed = data.wind.speed;
-      console.log(speed);
 
-      let sortedItems = { temp, weather, humidity, speed };
+      // let sortedItems = { temp, weather, humidity, speed };
       this.setState({ curentWeatherData: sortedItems });
     });
   };
@@ -56,7 +65,7 @@ class CurrentWeather extends React.Component {
     let temp = parseFloat(temp1);
 
     let currentTemp = temp.toFixed(1);
-    console.log("temp : " + currentTemp);
+    // console.log("temp : " + currentTemp);
     return currentTemp;
   };
 
@@ -64,29 +73,30 @@ class CurrentWeather extends React.Component {
 
 
   render() {
-    cityName = this.state.cityName;
-    // console.log("-------curentweather render, city:" + cityName);
+    // cityName = this.state.cityName;
+    // console.log("render------");
+    // console.log(this.state.curentWeatherData);
     // console.log(url);
     // this.getDataviaAxios();
     return (
-      <div className="top-part  ">
-        <h3 className="city-location" >
-          {cityName}
+      <div className="current_weather--main">
+        <h3 className="current_weather--city" >
+          {this.props.cityName}
         </h3>
-        <div className="today-detail">
-          <div className="today-weather">
-            <h2 className="today-temp">{this.state.curentWeatherData.temp}°</h2>
-            <div className="today-temp1">
+        <div className="current_weather--body">
+          <div className="current_weather--temp">
+            <h2 className="current_weather--h2">{this.state.curentWeatherData.temperature}°</h2>
+            <div className="current_weather--description">
               {this.state.curentWeatherData.weather}
             </div>
           </div>
-          <div className="humidity-wind">
-            <div className="humidity">
+          <div className="current_weather--hw">
+            <div className="current_weather--humidity">
               <h4>HUMIDITY</h4>
               <span>{this.state.curentWeatherData.humidity}%</span>
             </div>
             <span className="hw-seperated-line"></span>
-            <div className="wind">
+            <div className="current_weather--wind">
               <h4>WIND</h4>
               <span>{this.state.curentWeatherData.speed}K/M</span>
             </div>
