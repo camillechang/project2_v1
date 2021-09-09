@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import CurrentWeather from "./components/weather/CurrentWeather";
 import DailyWeather from "./components/weather/DailyWeather";
 import TwitterFeed from "./components/twitter/TwitterFeed";
-import SearchBar from "./components/UI/SearchBar";
+import SearchBar from "./components/ui/SearchBar";
 
 const App = (props) => {
 
