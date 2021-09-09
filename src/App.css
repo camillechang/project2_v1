@@ -118,6 +118,7 @@ body {
   flex-grow: 1;
   margin: auto;
   letter-spacing: 5px;
+  font-size: 2rem;
 }
 
 .next-arrow {
