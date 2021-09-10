@@ -13,11 +13,12 @@ const CurrentWeather = (props) => {
 
   useEffect(() => {
     const getCurrentWeatherData = () => {
-      let city = defaultCity;
-      if (props.cityName) {//exists
+      // let city = defaultCity;
+      if (props.cityName) {
+        //exists
         setCityName(props.cityName);
       }
-      let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`
+      let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=${units}`
       // console.log("getDataviaAxios--url----:", url);
       Axios.get(url).then((response) => {
         // handle success
