@@ -15,10 +15,10 @@
 
 ### Need to do:
 
-- 输入城市更改天气
+
 - Media qeuery which change UI to display on Mobile correctly
-- SCSS 文件 优化
-- 整体的重构 Readable, reuseable and maintable
+- SCSS modification
+- code refactor for (Readable, reuseable and maintable)
 
 ### current project website
 
